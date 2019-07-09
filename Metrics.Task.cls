@@ -68,7 +68,7 @@ Method OnTask() As %Status
 	
 	s ^Metrics("SystemMetrics","License",today,"Customer")=license("Customer")
 	s ^Metrics("SystemMetrics","License",today,"IsMultiServer")=license("IsMulti")
-	s ^Metrics("SystemMetrics","License",today,"Expires")=license("Expires")
+	s ^Metrics("SystemMetrics","License",today,"Expires")=$zdate(license("Expires"),3)
 	s ^Metrics("SystemMetrics","License",today,"Total")=license("Total")
 	i license("Available")<+$g(^Metrics("SystemMetrics","License",today,"Available"),99999999) s ^Metrics("SystemMetrics","License",today,"Available")=license("Available")
 	i license("Used")>+$g(^Metrics("SystemMetrics","License",today,"Used")) s ^Metrics("SystemMetrics","License",today,"Used")=license("Used")
