@@ -26,8 +26,13 @@ Method OnTask() As %Status
 		s databases(database,"DiskSize")=$p(..volumeInfo(..mountvolume(databases(database))),"*",2)
 		i +databases(database,"MaxSize")>0 {
 			s databases(database,"MaxFree")=$j(((databases(database,"MaxSize")-databases(database,"Used"))/databases(database,"MaxSize"))*100,0,0)
-		} else {
+#;		} else {
+#;			s databases(database,"MaxFree")=$j((databases(database,"DiskFreeSpace")/databases(database,"DiskSize"))*100,0,0)
+#; fails with <DIVIDE> if no DiskSize reported
+		} elseif +databases(database,"DiskSize") {
 			s databases(database,"MaxFree")=$j((databases(database,"DiskFreeSpace")/databases(database,"DiskSize"))*100,0,0)
+		} else 	{
+			s databases(database,"MaxFree")=$j((databases(database,"DiskFreeSpace")/databases(database,"DiskFreeSpace"))*100,0,0)
 		}
 	}
 	
