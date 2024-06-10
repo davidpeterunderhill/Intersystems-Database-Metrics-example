@@ -27,3 +27,31 @@ Metrics are stored in ^Metrics in the namespace that the class resides in/is run
    "Used"          = peak license units in use.  
    "Available"     = lowest peak license units available.
    ```
+
+## Docker    
+
+### Prerequisites
+Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
+### Installation
+Clone/git pull the repo into any local directory
+```
+$ git clone https://github.com/rcemper/PR_Database-Metrics.git   
+```
+to build and start the container run     
+```
+$ docker compose up -d && docker compose logs -f
+```
+A deom Task is prepared. It's named **docker**    
+http://localhost:42773/csp/sys/op/%25CSP.UI.Portal.TaskInfo.zen?$ID1=1000     
+It is ready for you to adjust it to your needs.    
+
+To open IRIS Terminal do:   
+```
+$ docker-compose exec iris iris session iris 
+USER>
+```
+or using **WebTerminal**     
+http://localhost:42773/terminal/      
+
+To access IRIS System Management Portal   
+http://localhost:42773/csp/sys/UtilHome.csp    

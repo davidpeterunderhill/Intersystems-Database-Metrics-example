@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tasks><Task>
+  <Name>docker</Name>
+  <RunAsUser>_SYSTEM</RunAsUser>
+  <EmailOutput>false</EmailOutput>
+  <Expires>true</Expires>
+  <OpenOutputFile>false</OpenOutputFile>
+  <OutputFileIsBinary>true</OutputFileIsBinary>
+  <SuspendOnError>true</SuspendOnError>
+  <SuspendTerminated>false</SuspendTerminated>
+  <Suspended>0</Suspended>
+  <Priority>0</Priority>
+  <TaskClass>Metrics.Task</TaskClass>
+  <IsBatch>false</IsBatch>
+  <NameSpace>USER</NameSpace>
+  <TimePeriod>0</TimePeriod>
+  <TimePeriodEvery>1</TimePeriodEvery>
+  <DailyFrequency>1</DailyFrequency>
+  <DailyFrequencyTime>0</DailyFrequencyTime>
+  <DailyIncrement>5</DailyIncrement>
+  <DailyStartTime>00:00:00</DailyStartTime>
+  <DailyEndTime>00:00:00</DailyEndTime>
+  <JobGUID>1EB788D2-1877-11EF-BD9B-0242AC120002</JobGUID>
+  <StartDate>2024-05-23</StartDate>
+  <LastSchedule>0</LastSchedule>
+  <LastStarted>0</LastStarted>
+  <LastFinished>0</LastFinished>
+  <MirrorStatus>1</MirrorStatus>
+  <Type>2</Type>
+  <RescheduleOnStart>true</RescheduleOnStart>
+  <DeleteAfterRun>false</DeleteAfterRun>
+  <Description>metrics demo</Description>
+</Task>
+
+</Tasks>

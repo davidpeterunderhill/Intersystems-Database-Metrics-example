@@ -1,0 +1,19 @@
+zn "%SYS"
+  
+// Unexpire passwords and set up passwordless mode to simplify dev use.
+do ##class(Security.Users).UnExpireUserPasswords("*")
+zpm "install passwordless"
+
+zn "USER"
+// Create /_vscode web app to support intersystems-community.testingmanager VS Code extension
+zpm "install vscode-per-namespace-settings"
+zpm "install webterminal"
+zpm "list"
+
+// this should be the place for individual application code.
+set sc(1)=$system.OBJ.Load("/home/irisowner/dev/Metrics.Task.cls","ck")
+set sc(2)=##class(%SYS.Task).ImportTasks("/home/irisowner/dev/DockerTask.xml")
+zwrite sc
+Write !?5,"Task loaded",!
+halt
+
